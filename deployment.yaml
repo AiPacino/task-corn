@@ -1,0 +1,53 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cailianpress-cron
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cailianpress-cron
+    spec:
+      containers:
+        - name: cailianpress-cron
+          image: registry.cn-beijing.aliyuncs.com/lanjing/cailianpress-cron:0.1.21
+          ports:
+          - containerPort: 80
+          env:
+          - name: REDIS_ADDR
+            valueFrom:
+              configMapKeyRef:
+                name: redis-env-config
+                key: redis-address
+          - name: REDIS_PWD
+            valueFrom:
+              configMapKeyRef:
+                name: redis-env-config
+                key: redis-password
+          - name: WRITER_DB_URL
+            valueFrom:
+              configMapKeyRef:
+                name: db-env-config
+                key: readwrite-db-url
+          - name: DB_URL
+            valueFrom:
+              configMapKeyRef:
+                name: db-env-config
+                key: readonly-db-url
+          - name: IS_DEBUG
+            valueFrom:
+              configMapKeyRef:
+                name: env-config
+                key: is-debug
+          - name: ALILOG_CONFIG
+            value: /etc/config/alilog-cfg.json
+          volumeMounts:
+            - name: alilog-cfg
+              mountPath: /etc/config/
+      volumes:
+        - name: alilog-cfg
+          configMap:
+            name: alilog-cfg
+      imagePullSecrets:
+        - name: aliregsecret

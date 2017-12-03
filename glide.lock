@@ -1,0 +1,37 @@
+hash: 50a39bace87918a64390e508ad37ee96dcf5cf4abf8bf769e4f00c7fe21de75d
+updated: 2017-07-25T15:52:02.12502836+08:00
+imports:
+- name: github.com/denverdino/aliyungo
+  version: cac644fbb1c76ee1f86f1466e04a0b0ffae691b6
+  subpackages:
+  - common
+  - sls
+  - util
+- name: github.com/go-sql-driver/mysql
+  version: a0583e0143b1624142adab07e0e97fe106d99561
+- name: github.com/golang/protobuf
+  version: 18c9bb3261723cd5401db4d0c9fbc5c3b6c70fe8
+  subpackages:
+  - proto
+- name: github.com/lann/builder
+  version: f22ce00fd9394014049dad11c244859432bd6820
+- name: github.com/lann/ps
+  version: 62de8c46ede02a7675c4c79c84883eb164cb71e3
+- name: github.com/Masterminds/squirrel
+  version: 20f192218cf52a73397fa2df45bdda720f3e47c8
+- name: github.com/Masterminds/structable
+  version: 6e1357254de55587c7b9593412b98383a611ea42
+- name: github.com/wangyibin/alilog
+  version: 6f423fb9c2096ce494acb7286f5c9b64f11dff0d
+- name: golang.org/x/sys
+  version: b699b7032584f0953262cb2788a0ca19bb494703
+  repo: https://github.com/golang/sys.git
+- name: gopkg.in/redis.v5
+  version: a16aeec10ff407b1e7be6dd35797ccf5426ef0f0
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/hashtag
+  - internal/pool
+  - internal/proto
+testImports: []

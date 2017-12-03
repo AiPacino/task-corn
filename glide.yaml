@@ -1,0 +1,10 @@
+package: cailian/cron
+import:
+- package: golang.org/x/sys
+  repo: https://github.com/golang/sys.git
+- package: github.com/wangyibin/alilog
+  version: ^0.1.2
+- package: github.com/go-sql-driver/mysql
+  version: ^1.3.0
+- package: github.com/Masterminds/structable
+  version: 6e1357254de55587c7b9593412b98383a611ea42
